@@ -77,7 +77,7 @@ body{
     }
     @keyframes animacao{
         from{
-            left: -1350px;
+            left:-1350px;
         }
         to{
             left: 0px;
