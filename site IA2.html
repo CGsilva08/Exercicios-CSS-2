@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Futebol | Treinos de Alto Rendimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero-text p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    nav {
+      background: #000;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00cc66;
+    }
+
+    section {
+      padding: 80px 50px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      font-weight: 800;
+      color: #111;
+      border-left: 5px solid #006400;
+      padding-left: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #006400;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: #006400;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #004d00;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero-text p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    nav {
+      background: #000;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00cc66;
+    }
+
+    section {
+      padding: 80px 50px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      font-weight: 800;
+      color: #111;
+      border-left: 5px solid #006400;
+      padding-left: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #006400;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: #006400;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #004d00;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .footer-section h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #00cc66;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><a href="#">Elite Futebol</a></div>
+    <div>
+      <a href="#sobre">Sobre</a>
+      <a href="#treinos">Treinos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#estruturas">Estruturas</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-text">
+      <h1>Elite Futebol</h1>
+      <p>Transformando talentos em atletas profissionais com estrutura de ponta e metodologias avançadas</p>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2 class="section-title">Sobre o Projeto</h2>
+    <p>Elite Futebol é um centro de excelência para jovens talentos e atletas que buscam performance elevada. Com metodologia baseada em práticas europeias e apoio multidisciplinar, somos referência em desenvolvimento técnico, físico e mental para o futebol competitivo. Nosso espaço é ideal para treinar, evoluir e ser descoberto.</p>
+  </section>
+
+  <section id="treinos">
+    <h2 class="section-title">Treinos Disponíveis</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Fundamentos Técnicos</h3>
+        <p>Domínio de bola, dribles, finalizações e construção de jogadas com precisão e criatividade.</p>
+        <a href="#" class="btn">Ver Detalhes</a>
+      </div>
+      <div class="card">
+        <h3>Condicionamento Físico</h3>
+        <p>Melhore seu VO2 máximo, explosão muscular, agilidade e tempo de reação com acompanhamento de ponta.</p>
+        <a href="#" class="btn">Ver Detalhes</a>
+      </div>
+      <div class="card">
+        <h3>Treino Tático</h3>
+        <p>Entendimento posicional, compactação, linhas defensivas e movimentações ofensivas modernas.</p>
+        <a href="#" class="btn">Ver Detalhes</a>
+      </div>
+      <div class="card">
+        <h3>Coaching Psicológico</h3>
+        <p>Controle emocional em campo, foco competitivo e construção de mentalidade resiliente para o esporte.</p>
+        <a href="#" class="btn">Ver Detalhes</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="estruturas">
+    <h2 class="section-title">Nossa Estrutura</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Campos Oficiais</h3>
+        <p>2 gramados oficiais com drenagem Fifa e iluminação noturna para treinos intensos e jogos-teste.</p>
+      </div>
+      <div class="card">
+        <h3>Centro de Recuperação</h3>
+        <p>Fisioterapia, crioterapia e análise biomecânica com equipamentos de última geração.</p>
+      </div>
+      <div class="card">
+        <h3>Academia Profissional</h3>
+        <p>Equipamentos específicos para atletas, treino funcional e acompanhamento físico detalhado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="eventos">
+    <h2 class="section-title">Eventos e Avaliações</h2>
+    <p>Organizamos amistosos com clubes parceiros, avaliações técnicas com olheiros e torneios internos mensais para visibilidade dos nossos talentos.</p>
+  </section>
+
+  <section id="equipe">
+    <h2 class="section-title">Nossa Equipe</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Lucas Mendes</h3>
+        <p>Ex-zagueiro profissional, técnico licenciado UEFA Pro. Responsável pela metodologia tática e captação.</p>
+      </div>
+      <div class="card">
+        <h3>Fernanda Rios</h3>
+        <p>Especialista em preparação física de elite com foco em atletas sub-20 e recuperação muscular.</p>
+      </div>
+      <div class="card">
+        <h3>Marcelo Viana</h3>
+        <p>Psicólogo esportivo e mentor comportamental com ênfase em foco competitivo e autoestima.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2 class="section-title">Entre em Contato</h2>
+    <p>Está pronto para elevar seu jogo? Agende sua avaliação gratuita ou venha nos visitar.</p>
+    <a href="mailto:contato@elitefutebol.com" class="btn">contato@elitefutebol.com</a>
+  </section>
+
+ <footer>
+    <div class="footer-section">
+      <h4>Elite Futebol</h4>
+      <p>Transformando talentos em atletas com excelência, dedicação e paixão pelo esporte.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#treinos">Treinos</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contato</h4>
+      <ul>
+        <li>Email: contato@elitefutebol.com</li>
+        <li>Endereço: Rua dos Campeões, 1234</li>
+        <li>São Paulo – SP</li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Elite Futebol. Todos os direitos reservados.
+    </div>
+  </footer>
+</body>
+</html>

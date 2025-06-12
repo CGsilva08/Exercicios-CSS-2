@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Futebol Academy | Treinos e Alta Performance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+    body { background: #f0f0f0; color: #333; line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(0,0,0,0.6); position: fixed; width: 100%; top: 0; z-index: 1000; }
+    nav .logo { color: #fff; font-size: 1.8rem; font-weight: 800; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    nav ul li a:hover { color: #00cc66; }
+    header { background: url('https://images.unsplash.com/photo-1517927033932-b3a30f2d305a') no-repeat center/cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+    header::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+    .hero { position: relative; z-index:1; color: #fff; }
+    .hero h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 20px; }
+    .hero p { font-size: 1.3rem; margin-bottom: 30px; max-width: 700px; }
+    .hero .btn { padding: 15px 35px; background: #00cc66; color: #fff; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s; text-decoration: none; }
+    .hero .btn:hover { background: #009944; }
+    section { padding: 100px 60px; max-width: 1400px; margin: auto; }
+    .section-title { font-size: 2.8rem; margin-bottom: 40px; position: relative; display: inline-block; }
+    .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 5px; background: #00cc66; }
+    .intro { text-align: center; max-width:800px; margin:auto; margin-bottom:60px; }
+    .grid { display: grid; gap: 40px; }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+    .card { background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); overflow:hidden; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-10px); }
+    .card img { width:100%; height:200px; object-fit:cover; }
+    .card-body { padding:20px; }
+    .card-body h3 { margin-bottom:15px; color:#00cc66; }
+    .card-body p { font-size:0.95rem; color:#555; }
+    .btn-secondary { display:inline-block; margin-top:20px; padding:12px 25px; background:#fff; color:#00cc66; border:2px solid #00cc66; border-radius:6px; text-decoration:none; font-weight:600; transition: background 0.3s, color 0.3s; }
+    .btn-secondary:hover { background:#00cc66; color:#fff; }
+    .train-table { width:100%; border-collapse:collapse; margin-top:20px; }
+    .train-table th, .train-table td { padding:15px; border:1px solid #ddd; text-align:left; }
+    .train-table th { background:#00cc66; color:#fff; }
+    .testimonial { background: url('https://images.unsplash.com/photo-1509475826633-fed577a2c71b') no-repeat center/cover; padding:100px; position:relative; color:#fff; }
+    .testimonial::after { content:''; position:absolute; top:0;left:0;width:100%;height:100%; background:rgba(0,0,0,0.6); }
+    .testimonial .content { position:relative; max-width:800px; margin:auto; text-align:center; }
+    .testimonial p { font-size:1.2rem; margin-bottom:20px; font-style:italic; }
+    .testimonial h4 { font-size:1rem; font-weight:600; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
+    .gallery img { width:100%; height:150px; object-fit:cover; border-radius:8px; }
+    .contact { display:flex; flex-wrap:wrap; gap:40px; }
+    .contact-form { flex:1; min-width:300px; }
+    .contact-form input, .contact-form textarea { width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:6px; }
+    .contact-form button { padding:12px 30px; background:#00cc66; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; }
+    .map { flex:1; min-width:300px; height:350px; background:url('https://via.placeholder.com/600x350') center/cover; border-radius:12px; }
+    footer { background:#111; color:#ccc; padding:60px 60px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; position:relative; }
+    footer::before { content:''; position:absolute; top:0;left:0;width:100%;height:100%; background:url('https://images.unsplash.com/photo-1507420355007-c24a7220185c') center/cover; opacity:0.2; }
+    footer > * { position:relative; z-index:1; }
+    .footer-section h4 { color:#fff; margin-bottom:20px; }
+    .footer-section ul { list-style:none; }
+    .footer-section ul li { margin-bottom:10px; }
+    .footer-section ul li a { color:#ccc; text-decoration:none; font-size:0.95rem; transition: color 0.3s; }
+    .footer-section ul li a:hover { color:#00cc66; }
+    .footer-bottom { text-align:center; grid-column:1/-1; margin-top:40px; color:#777; font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Pro Futebol Academy</div>
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#programas">Programas</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#testemunhos">Depoimentos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="hero">
+      <h1>Eleve Seu Jogo</h1>
+      <p>Treinos de alta performance para todos os níveis, com metodologia comprovada.</p>
+      <a href="#programas" class="btn">Conheça Nossos Programas</a>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2 class="section-title">Sobre Nós</h2>
+    <div class="intro">
+      <p>Na Pro Futebol Academy, acreditamos que talento nasce com técnica e disciplina. Nossa equipe reúne treinadores profissionais, ex-atletas e especialistas em preparação física para criar programas sob medida.</p>
+    </div>
+  </section>
+
+  <section id="programas">
+    <h2 class="section-title">Nossos Programas</h2>
+    <div class="grid grid-3">
+      <div class="card">  <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b" alt="Técnica Individual">  <div class="card-body"><h3>Técnica Individual</h3><p>Dribles, controle de bola e finalização com sessões personalizadas.</p></div></div>
+      <div class="card">  <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d" alt="Treino Tático">  <div class="card-body"><h3>Treino Tático</h3><p>Compreensão de posicionamento, estratégias coletivas e leitura de jogo.</p></div></div>
+      <div class="card">  <img src="https://images.unsplash.com/photo-1505843492549-07c2cf0f2fbb" alt="Condicionamento">  <div class="card-body"><h3>Condicionamento Físico</h3><p>Velocidade, resistência e força com acompanhamento profissional.</p></div></div>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <h2 class="section-title">Agenda de Treinos</nobr></h2>
+    <table class="train-table">
+      <thead><tr><th>Dia</th><th>Horário</th><th>Programa</th><th>Local</th></tr></thead>
+      <tbody>
+        <tr><td>Segunda</td><td>08:00 - 10:00</td><td>Técnica Individual</td><td>Quadra A</td></tr>
+        <tr><td>Terça</td><td>18:00 - 20:00</td><td>Treino Tático</td><td>Campo Principal</td></tr>
+        <tr><td>Quarta</td><td>07:00 - 09:00</td><td>Condicionamento</td><td>Academia</td></tr>
+        <tr><td>Quinta</td><td>19:00 - 21:00</td><td>Técnica Individual</td><td>Quadra B</td></tr>
+        <tr><td>Sexta</td><td>17:00 - 19:00</td><td>Treino Tático</td><td>Campo Secundário</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="testemunhos" class="testimonial">
+    <div class="content"><p>"Graças à Pro Futebol Academy, melhorei minha performance e entrei em um clube profissional!"</p><h4>- João Silva, Atleta Profissional</h4></div>
+  </section>
+
+  <section id="galeria">
+    <h2 class="section-title">Nossa Galeria</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1587614382346-ac2d62b0faba" alt="Treino 1">
+      <img src="https://images.unsplash.com/photo-1567460381354-57cfa58922c2" alt="Treino 2">
+      <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e27" alt="Treino 3">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Treino 4">
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2 class="section-title">Fale Conosco</h2>
+    <div class="contact">
+      <div class="contact-form">
+        <input type="text" placeholder="Nome" />
+        <input type="email" placeholder="Email" />
+        <textarea rows="5" placeholder="Mensagem"></textarea>
+        <button>Enviar Mensagem</button>
+      </div>
+      <div class="map"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-section">
+      <h4>Pro Futebol Academy</h4>
+      <p>Av. dos Campeões, 1234 - Belo Horizonte, MG</p>
+      <p>Email: contato@profutebol.com.br</p>
+    </div>
+    <div class="footer-section">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Pro Futebol Academy. Todos os direitos reservados.</div>
+  </footer>
+</body>
+</html>
